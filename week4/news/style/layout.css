@@ -1,0 +1,48 @@
+body {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    max-width: 60em;
+    background-color: #EDEFF0;
+    margin: auto;
+}
+
+body > header {
+    grid-column: 1 / 3;
+}
+
+body > header > h2 {
+    margin-bottom: 0;
+}
+
+#signup {
+    text-align: right;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    width: 100%;
+}
+
+aside#related {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
+
+section#news {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.tags, .date, .comments {
+    float: right;
+}
+
+body > footer {
+    grid-row-end: span 4;
+    grid-column-end: span 2;
+}

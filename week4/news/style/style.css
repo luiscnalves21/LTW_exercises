@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+:root {
+    --blue: #046DD5;
+    --black: #2A2F33;
+    --red: #F4655F;
+    --sRed: #E1493E;
+    --sGreen: #8ABA56;
+    --sPurple: #5B4282;
+    --sOrange: #FF8932;
+    --sBlue: #19B6E9;
+    --sPink:  #E84C8B;
+}
+
+body > header {
+    background-color: var(--blue);
+    padding: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+body > header > h1 {
+    margin-top: -10px;
+}
+
+header > h1 > a {
+    color: white;
+    text-decoration: none;
+}
+
+header > h2 {
+    margin-top: -25px;
+}
+
+header > h2 > a {
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+#signup a {
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+    margin: 0;
+}
+
+#signup a:first-child {
+    border-right: 1px solid white;
+    padding-right: 12px;
+}
+
+#signup a:nth-child(2) {
+    padding-left: 9px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav > input {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    height: 40px;
+    padding: 10px 0 0;
+    background-color: white;
+}
+
+nav li:hover {
+    background-color: var(--black);
+    transition: .5s;
+}
+
+nav li:hover a {
+    color: white;
+}
+nav li:nth-child(1) {
+    border-top: 5px solid var(--sRed);
+}
+
+nav li:nth-child(2) {
+    border-top: 5px solid var(--sGreen);
+}
+
+nav li:nth-child(3) {
+    border-top: 5px solid var(--sPurple);
+}
+
+nav li:nth-child(4) {
+    border-top: 5px solid var(--sOrange);
+}
+
+nav li:nth-child(5) {
+    border-top: 5px solid var(--sBlue);
+}
+
+nav li:nth-child(6) {
+    border-top: 5px solid var(--sPink);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--black);
+    font-family: 'Poppins', sans-serif;
+}
+
+aside {
+    background-color: var(--black);
+    padding: 20px;
+    font-family: 'Lora', serif;
+    color: white;
+}
+
+aside a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+article > footer {
+    background-color: var(--red);
+}
+
+section#news header {
+    position: relative;
+    width: 30%;
+    height: 0;
+}
+
+section#news h1 {
+    text-align: left;
+    text-shadow: 5px 8px 4px black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 10px;
+}
+
+section#news img {
+    width: 100%;
+}
+
+section#news p {
+    padding: 1em;
+    font-family: 'Lora', serif;
+    line-height: 25px;
+    text-align: justify;
+}
+
+section#news > article {
+    background-color: white;
+}
+
+section#news > article > p:first-of-type::first-letter {
+    font-size: 2em;
+}
+
+section#news > article footer {
+    color: white;
+    font-size: .8em;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+section#news > article footer::before {
+    content: "By";
+}
+
+.tags a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    margin-right: 5px;
+}
+
+.date {
+    margin: auto 10px;
+}
+
+.comments {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+
+.comments::after {
+    content: " comments";
+}
+
+footer {
+    background-color: var(--black);
+    color: white;
+    padding: 2px 10px;
+    font-family: 'Lora', serif;
+    font-size: 1em;
+}

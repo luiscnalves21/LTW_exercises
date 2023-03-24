@@ -1,0 +1,60 @@
+#register, #login {
+    margin: 0 auto;
+    min-width: 45%;
+    height: 800px;
+}
+
+#register h1, #login h1{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+}
+
+#register form, #login form{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "username"
+        "email"
+        "password"
+        "button";
+    row-gap: 20px;
+    background-color: white;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;  
+}
+
+#register form > label:nth-child(1) {
+    grid-area: username;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+}
+
+#register form > label:nth-child(2) {
+    grid-area: email;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+}
+
+#register form > label:nth-child(3) {
+    grid-area: password;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+}
+
+#register form input, #login form input {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    width: 93%;
+}
+
+#register form > button, #login form > button{
+    grid-area: button;
+    margin-top: 20px;
+    justify-self: start;
+}

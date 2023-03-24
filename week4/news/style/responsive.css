@@ -1,0 +1,119 @@
+@media (max-width: 60em) {
+    #related {
+        display: none;
+    }
+
+    nav {
+        grid-column: 1 / 3;
+    }
+
+    #news {
+        grid-column: 1 / 3;
+    }
+
+    #register, #login {
+        grid-column: 1 / 3;
+    }
+}
+
+@media (max-width: 30em) {
+    body > header > h2 {
+        display: none;
+    }
+
+    #signup {
+        text-align: left;
+    }
+
+    section#news header {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    
+    section#news h1 > a {
+        color: black;
+        text-shadow: none;
+    }
+
+    nav {
+        text-align: left;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        padding: 0;
+        background-color: #EDEFF0;
+        max-height: 0;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+    }
+    
+    .hamburger {
+        display: block;
+        padding: 15px;
+        color: white;
+        background-color: var(--black);
+    }
+    
+    .hamburger::after {
+        content: '\2630';
+        cursor: pointer;
+    }
+
+    #hamburger:checked ~ .hamburger::after   {
+        content: '\2715';
+    }
+
+    #hamburger:checked ~ ul > li {
+        max-height: 40px;
+        padding: 10px 0 0 10px;
+        opacity: 1;
+    }
+
+    nav li:nth-child(1) {
+        border-top: none;
+        border-left: 4px solid var(--sRed);
+    }
+    
+    nav li:nth-child(2) {
+        border-top: none;
+        border-left: 4px solid var(--sGreen);
+    }
+    
+    nav li:nth-child(3) {
+        border-top: none;
+        border-left: 4px solid var(--sPurple);
+    }
+    
+    nav li:nth-child(4) {
+        border-top: none;
+        border-left: 4px solid var(--sOrange);
+    }
+    
+    nav li:nth-child(5) {
+        border-top: none;
+        border-left: 4px solid var(--sBlue);
+    }
+    
+    nav li:nth-child(6) {
+        border-top: none;
+        border-left: 4px solid var(--sPink);
+    }
+    
+    section#news > article footer {
+        font-size: .7em;
+    }
+
+    #register, #login{
+        background-color: white;
+        width: 100%;
+    }
+
+    #register button, #login button {
+        width: 7em;
+    }
+}

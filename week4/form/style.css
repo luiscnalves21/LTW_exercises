@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;700&display=swap');
+
+:root {
+    --red: #DC2626;
+    --light: #ECFCCB;
+    --green-light: #D9F99D;
+    --green-dark: #84CC16;
+    --pink-light: #FECACA;
+    --pink-dark: #F87171;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form {
+    max-width: 50%;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat(4, 1fr) 2fr 1fr;
+    grid-template-areas: "fname lname username"
+                         "email email password"
+                         "address address address"
+                         "country city zipcode"
+                         "bio bio bio"
+                         ". . register";
+    margin: 40px auto;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Martel Sans', sans-serif;
+    font-weight: bold;
+    padding: 5px;
+}
+
+input, textarea, select {
+    font-family: 'Martel Sans', sans-serif;
+    background-color: var(--light);
+    border: 1px solid var(--green-dark);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-width: 2px;;
+}
+
+#username {
+    grid-area: username;
+    color: var(--red);
+}
+
+#username > input {
+    background-color: var(--pink-light);
+    border-color: var(--red);
+}
+
+#password {
+    grid-area: password;
+    color: var(--red);
+}
+
+#password > input {
+    background-color: var(--pink-light);
+    border-color: var(--red);
+}
+
+#fname {
+    grid-area: fname;
+}
+
+#lname {
+    grid-area: lname;
+}
+
+#email {
+    grid-area: email;
+    color: var(--red);
+}
+
+#email > input {
+    background-color: var(--pink-light);
+    border-color: var(--red);
+}
+
+#address {
+    grid-area: address;
+}
+
+#country {
+    grid-area: country;
+}
+
+#city {
+    grid-area: city;
+}
+
+#zipcode {
+    grid-area: zipcode;
+}
+
+#bio {
+    grid-area: bio;
+}
+
+#bio > textarea {
+    height: 60%;
+}
+
+#register {
+    grid-area: register;
+    background-color: var(--green-dark);
+    color: white;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 50px;
+    margin: 5px;
+}
