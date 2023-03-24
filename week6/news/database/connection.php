@@ -1,5 +1,5 @@
 <?php 
     function getDatabaseConnection() {
-        return new PDO("sqlite:../news.db");
+        return new PDO('sqlite:'.__DIR__.'/news.db');
     }
 ?>

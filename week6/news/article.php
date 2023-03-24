@@ -49,22 +49,15 @@
       </article>
     </aside>
           <?php 
-        $id = $_GET['id'];
 
-        $db = new PDO('sqlite:news.db');
+        require_once('database/connection.php');
+        require_once('database/news.php');
+        require_once('database/comments.php');
 
-        $stmt = $db->prepare('SELECT * FROM news JOIN users USING (username) WHERE id = :id');
-        $stmt->bindParam(':id', $_GET['id']);
-        $stmt->execute();
-        $article = $stmt->fetch();
-
-        $stmt = $db->prepare('SELECT * FROM comments JOIN users USING (username) WHERE news_id = ?');
-        $stmt->execute(array($_GET['id']));
-        $comments = $stmt->fetchAll();
-
-        $stmt = $db->prepare('SELECT COUNT() AS number FROM comments WHERE news_id = ?');
-        $stmt->execute(array($_GET['id']));
-        $number = $stmt->fetch();
+        $db = getDatabaseConnection();
+        $article = getOneNew($db);
+        $comments = getComments($db);
+        $number = getNumberOfComments($db);
 
         $date = date('F j', $article['published']);
         $tags = explode(',', $article['tags']);
@@ -101,7 +94,7 @@
         echo "<footer><span class='author'>" . $article['name'] . "</span>";
         echo "<span class='tags'><a href='index.php'>#" . $tags[0] . "</a> <a href='index.php'>#" . $tags[1] . "</a></span>";
         echo "<span class='date'>" . $date . "</span>";
-        echo "<a class='comments' href='article.php#comments'>" . $number['number'] . "</a>";
+        echo "<a class='comments' href='article.php?id=" . $article['id'] ."#comments'>" . $number['number'] . "</a>";
         echo "</footer></article></section>";
       ?>
     <footer>
