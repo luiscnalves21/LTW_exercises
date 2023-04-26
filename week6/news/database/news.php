@@ -15,4 +15,13 @@
 
         return $article;
     }
+
+    function updateArticle($db, $id, $title, $introduction, $fulltext) {
+        $stmt = $db->prepare('UPDATE news SET title = :title, introduction = :introduction, fulltext = :fulltext WHERE id = :id');
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':introduction', $introduction);
+        $stmt->bindParam(':fulltext', $fulltext);
+        $stmt->execute();
+    }
 ?>
