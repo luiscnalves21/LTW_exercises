@@ -16,12 +16,11 @@
       <h1><a href="index.php">Super Legit News</a></h1>
       <h2><a href="index.php">Where fake news are born!</a></h2>
       <div id="signup">
-        <a href="register.html">Register</a>
-        <a href="login.html">Login</a>
+        <a href="register.php">Register</a>
+        <a href="login.php">Login</a>
       </div>
     </header>
     <nav id="menu">
-      <!-- just for the hamburguer menu in responsive layout -->
       <input type="checkbox" id="hamburger"> 
       <label class="hamburger" for="hamburger"></label>
 
@@ -50,17 +49,17 @@
     </aside>
     <section id="register">
       <h1>Register</h1>
-      <form>
+      <form action="database/action_register.php" method="POST">
         <label>
           Username <input type="text" name="username">
         </label>
         <label>
-          E-mail <input type="email" name="email">
+          Name <input type="text" name="name">
         </label>
         <label>
           Password <input type="password" name="password">
         </label>
-        <button formaction="#" formmethod="post">Register</button>
+        <input type="submit" value="Register" style="background-color: gray; color: white; padding: 4px; border: 1px solid black; border-radius: 5px; cursor: pointer;">
       </form>
     </section>
     <footer>

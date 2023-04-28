@@ -32,7 +32,11 @@
 <?php function output_article_footer($article, $number) { 
     $date = date('F j', $article['published']);
     $tags = explode(',', $article['tags']);    
-?>
+    if (isset($_SESSION['username'])) {
+        ?>
+        <h4><a href="edit_article.php?id=<?=$article['id']?>">Edit Article</a></h4>
+<?php } ?>
+    
     </section><footer><span class='author'><?=$article['name']?></span>
     <span class='tags'><a href='index.php'>#<?=$tags[0]?></a> <a href='index.php'>#<?=$tags[1]?></a></span>
     <span class='date'><?=$date?></span>

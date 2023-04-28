@@ -23,5 +23,7 @@
         $stmt->bindParam(':introduction', $introduction);
         $stmt->bindParam(':fulltext', $fulltext);
         $stmt->execute();
+
+        
     }
 ?>

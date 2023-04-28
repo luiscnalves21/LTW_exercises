@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   require_once('database/connection.php');
   require_once('database/news.php');
   require_once('database/comments.php');
@@ -12,7 +14,11 @@
   $comments = getComments($db);
   $number = getNumberOfComments($db);
   
-  output_header();
+  if (isset($_SESSION['username'])) {
+    output_header_logout();
+  } else {
+    output_header_login();
+  }
   output_article($article);;
   output_comments($number, $comments);
   output_forms();
