@@ -106,6 +106,7 @@
     if (isset($_SESSION['username'])) { ?>
         <footer>
             <p><a href="create_article.php" style="color: white;">Create new article</a></p>
+            <p><a href="delete_article.php" style="color: white;">Delete article</a></p>
             <p>&copy; Fake News, 2022</p>
         </footer>
 <?php } else { ?>

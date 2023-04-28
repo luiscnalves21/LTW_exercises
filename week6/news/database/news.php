@@ -35,4 +35,10 @@
         $stmt->bindParam(':tags', $tags);
         $stmt->execute();
     }
+
+    function deleteArticle($db, $id) {
+        $stmt = $db->prepare('DELETE FROM news WHERE id = :id');
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 ?>
