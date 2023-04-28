@@ -11,7 +11,12 @@
     <p><?=$article['introduction']?></p>
     <p><?=$article['fulltext']?></p>
     <footer><span class='author'><?=$article['name']?></span>
-    <span class='tags'><a href='index.php'>#<?=$tags[0]?></a> <a href='index.php'>#<?=$tags[1]?></a></span>
+    <?php 
+        foreach ($tags as $tag) {
+            echo "<span class='tags'><a href='index.php'>#$tag</a> ";
+        }
+        echo "</span>";
+    ?>
     <span class='date'><?=$date?></span>
     <a class='comments' href='article.php?id=<?=$article['id']?>#comments'><?=$article['comments']?></a>
     </footer></article>
@@ -38,7 +43,12 @@
 <?php } ?>
     
     </section><footer><span class='author'><?=$article['name']?></span>
-    <span class='tags'><a href='index.php'>#<?=$tags[0]?></a> <a href='index.php'>#<?=$tags[1]?></a></span>
+    <?php 
+        foreach ($tags as $tag) {
+            echo "<span class='tags'><a href='index.php'>#$tag</a> ";
+        }
+        echo "</span>";
+    ?>
     <span class='date'><?=$date?></span>
     <a class='comments' href='article.php?id=<?=$article['id']?>#comments'><?=$number['number']?></a>
     </footer></article></section>

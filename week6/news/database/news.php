@@ -23,7 +23,16 @@
         $stmt->bindParam(':introduction', $introduction);
         $stmt->bindParam(':fulltext', $fulltext);
         $stmt->execute();
+    }
 
-        
+    function createArticle($db, $title, $introduction, $fulltext, $username, $tags) {
+        $stmt = $db->prepare('INSERT INTO news (title, introduction, fulltext, published, username, tags) VALUES (:title, :introduction, :fulltext, :published, :username, :tags)');
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':introduction', $introduction);
+        $stmt->bindParam(':fulltext', $fulltext);
+        $stmt->bindParam(':published', time());
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':tags', $tags);
+        $stmt->execute();
     }
 ?>

@@ -1,11 +1,9 @@
 <?php 
     session_start();
-    
+
     if (!isset($_SESSION['username'])) {
         header('Location: index.php');
     }
-
-    $id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +12,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Article</title>
+    <title>Create Article</title>
 </head>
 <body>
-    <h1>Edit Article <?=$id?></h1>
-    <form action="database/action_edit_news.php" method="post">
-        <input type="hidden" name="id" value="<?=$id?>">
-        
+    <form action="database/action_create_article.php" method="post">
+        <input type="hidden" name="username" value="<?=$_SESSION['username']?>">    
+
         <label for="title">Title</label>
         <input type="text" name="title" id="title">
 
@@ -30,6 +27,10 @@
         <label for="fulltext">Full Text</label>
         <textarea name="fulltext" id="fulltext" cols="30" rows="10"></textarea>
 
+        <label for="tags">Tags</label>
+        <input type="text" name="tags" id="tags">
+
         <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
